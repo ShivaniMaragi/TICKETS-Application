@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Tickets
+</title>
+</head>
+<h1>TICKETS</h1>
+<body>
+<form action="/insert/" method="POST">
+{% csrf_token %}
+Phone number:
+<input type="number" name="ph" required><br><br>
+Firstname : 
+<input type="text" name="fname" required><br><br>
+Lastname : 
+<input type="text" name="lname" required><br><br>
+City : 
+<input type="text" name="city" required><br><br>
+Address : 
+<input type="text" name="add" required><br><br>
+IssueType : 
+<select name="itype">
+    <option  value="Tecnical Issue"> Tecnical Issue</option>
+    <option  value="Billing Issue">Billing Issue</option>
+    <option  value="Account Issue">Account Issue</option>
+</select><br><br>
+Issue Description : 
+<input type="text" name="datas" style="height:70px"  maxlength="200" ><br><br>
+
+Notes : 
+<input type="text" name=index_notes style="height:50px">
+<br><br>
+<input  type="submit" value="Generate Ticket">
+<br>
+<br>
+</form>
+</body>
+</html>
+<h3><a href="/display">Click here view Generated tickets</a></h3>

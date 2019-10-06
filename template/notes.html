@@ -1,0 +1,50 @@
+<h2>Information of Ticket_no {{Ticket_no}}</h2> 
+
+<a href="/display"> Go Back to List of Tickets</a>
+<br><br>
+{% for data in alldata %}
+Phone number: {{data.ph_no}} 
+<br>
+Firstname : {{data.firstname}}
+<br>
+Lastname : {{data.lastname}}
+<br>
+City : {{data.city}}
+<br>
+Address : {{data.address}}
+<br>
+IssueType : {{data.Issuetype}}
+<br>
+Issue Description : {{data.Issue_Desc}}
+<br>
+Ticket number : {{data.Ticket_no}}
+<br><br>
+Ticket status : {{data.Ticket_status}}
+{% endfor %}
+<br><br>
+<table border="1" width="600">
+<tr>
+<td><h3>Ticket_no</h3></td>
+<td><h3>Notes</h3></td>
+</tr>
+{% for data_note in context_note %}
+<tr>
+<td  >{{ data_note.Ticket_no }}</td>
+<td>{{ data_note.Ticket_notes }}</td>
+<td>{{data_note.parent_tkt_id}}</td>
+</tr>
+{% endfor %}
+</table>
+
+<br><br>
+<form action="/selected_ticket">
+Change Status : 
+<select name="t_status">
+    <option  value="Open"> Open</option>
+    <option  value="In Progress">In Progress</option>
+    <option  value="Closed">Closed</option>
+</select><br><br>
+    Notes to be Added : <input type="text" name="notes" ><br><br>
+    <button name="note" value={{Ticket_no}}>Update Ticket</button>
+</form>
+

@@ -1,0 +1,31 @@
+<h1>Tickets data</h1>
+<a href="/">Click here Go Back</a>
+<br><br>
+<table border="1" width="600">
+<tr>
+<td><h3>Phone</h3></td>
+<td><h3>Firstname</h3></td>
+<td><h3>Lastname</h3></td>
+<td><h3>City</h3> </td>
+<td><h3>Address</h3></td>
+<td><h3>IssueType</h3></td>
+<td><h3>Issue Description</h3></td>
+<td><h3>Ticket No</h3></td>
+<td><h3>Ticket Status</h3></td>
+</tr>
+
+{% for data in alldata %}
+<tr>
+<td>{{ data.ph_no }}</td>
+<td>{{ data.firstname }}</td>
+<td>{{ data.lastname }}</td>
+<td>{{ data.city }}</td>
+<td>{{ data.address }}</td>
+<td>{{ data.Issuetype }}</td>
+<td>{{ data.Issue_Desc }}</td>
+<td><a href="/selected_ticket?note={{data.Ticket_no}}"> {{data.Ticket_no}}</a><br><br>
+<td>{{data.Ticket_status}}</td>
+</tr>
+{% endfor %}
+</table>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Information
+</title>
+</head>
+<body>
+{% csrf_token %}
+Phone number: {{ph}}
+<br><br>
+Firstname : {{fname}}
+<br><br>
+Lastname : {{lname}}
+<br><br>
+City : {{city}}
+<br><br>
+Address : {{address}}
+<br><br>
+IssueType : {{itype}}
+<br><br>
+Issue Description : {{idscr}}
+<br><br>
+Ticket number : {{tkt_no}}
+<br><br>
+Notes : {{index_notes}}
+<br><br>
+Ticket Status : {{t_status}}
+<br><br>
+
+<h2>TICKET GENERATED</h2>
+
+<form action="/">
+        <input type="submit" value="Go Back">
+</form>
